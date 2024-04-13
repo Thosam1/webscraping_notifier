@@ -87,9 +87,10 @@ function scrape() {
     });
 }
 
+getInitData();
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
-
     getInitData();
     setInterval(scrape, 120000);
 })
