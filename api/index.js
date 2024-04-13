@@ -12,7 +12,6 @@ const app = express()
 const port = 4000
 
 console.log("Hello world")
-getInitData();
 
 // URL
 const url = "https://tanzquotient.org/en/courses/"
@@ -87,7 +86,6 @@ function scrape() {
         // sendMessage("Currently Scrapping", 1);
     });
 }
-
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
