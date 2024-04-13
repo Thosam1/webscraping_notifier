@@ -6,6 +6,11 @@ require("dotenv").config();
 const bot = require('./telegram_bot');
 const sendMessage = require('./telegram_bot');
 
+const express = require("express")
+const app = express()
+const port = 3000
+
+
 // URL
 const url = "https://tanzquotient.org/en/courses/"
 
@@ -16,8 +21,14 @@ let salsa4PreviousValue = "";
 let salsaRuedaSwitchPreviousValue = "";
 
 console.log("Hello world")
-getInitData();
-setInterval(scrape, 120000);
+
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+    getInitData();
+    setInterval(scrape, 1000);
+})
+
 
 function getInitData() {
     // Get the HTML from the URL
