@@ -7,14 +7,18 @@ const pretty = require("pretty");
 const bot = require('./telegram_bot');
 const sendMessage = require('./telegram_bot');
 
-// const express = require("express")
-// const app = express()
-// const port = 3000
-//
-// app.listen(port, () => {
-//     console.log(`Example app listening on port ${port}`)
-// })
+const express = require("express")
+const app = express()
+const port = 4000
 
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+
+    console.log("Hello world")
+
+    getInitData();
+    setInterval(scrape, 120000);
+})
 
 // URL
 const url = "https://tanzquotient.org/en/courses/"
@@ -24,12 +28,6 @@ let ballroom1PreviousValue = "";
 let ballroom2PreviousValue = "";
 let salsa4PreviousValue = "";
 let salsaRuedaSwitchPreviousValue = "";
-
-console.log("Hello world")
-
-getInitData();
-setInterval(scrape, 120000);
-
 
 function getInitData() {
     // Get the HTML from the URL
@@ -96,4 +94,4 @@ function scrape() {
     });
 }
 
-// module.exports = app;
+module.exports = app;
