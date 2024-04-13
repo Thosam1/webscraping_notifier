@@ -51,7 +51,7 @@ function getInitData() {
         salsaRuedaSwitchPreviousValue = salsaRuedaSwitch.text()
 
         console.log("The data has been initialized and the interval is set to every " + 120000/1000 + " seconds")
-        sendMessage("The data has been initialized and the interval is set to every " + 120000/1000 + " seconds");
+        sendMessage("The data has been initialized and the interval is set to every " + 120000/1000 + " seconds", 1);
     });
 }
 
@@ -91,6 +91,6 @@ function scrape() {
         }
 
         console.log("Currently Scrapping")
-        sendMessage("Currently Scrapping", 2);
+        sendMessage("Currently Scrapping", 1);
     });
 }
