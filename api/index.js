@@ -11,6 +11,10 @@ const express = require("express")
 const app = express()
 const port = 3000
 
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
+
 
 // URL
 const url = "https://tanzquotient.org/en/courses/"
@@ -23,12 +27,8 @@ let salsaRuedaSwitchPreviousValue = "";
 
 console.log("Hello world")
 
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-    getInitData();
-    setInterval(scrape, 120000);
-})
+getInitData();
+setInterval(scrape, 120000);
 
 
 function getInitData() {
