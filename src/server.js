@@ -15,6 +15,7 @@ let ballroom2PreviousValue = "";
 let salsa4PreviousValue = "";
 let salsaRuedaSwitchPreviousValue = "";
 
+console.log("Hello world")
 getInitData();
 setInterval(scrape, 120000);
 
@@ -38,6 +39,7 @@ function getInitData() {
         salsa4PreviousValue = salsa4.text()
         salsaRuedaSwitchPreviousValue = salsaRuedaSwitch.text()
 
+        console.log("The data has been initialized and the interval is set to every " + 120000/1000 + " seconds")
         sendMessage("The data has been initialized and the interval is set to every " + 120000/1000 + " seconds");
     });
 }
@@ -76,6 +78,8 @@ function scrape() {
             salsaRuedaSwitchPreviousValue = salsaRuedaSwitch.text()
             sendMessage("Salsa Rueda course has changed !", 2);
         }
-        // sendMessage("Currently Scrapping", 2);
+
+        console.log("Currently Scrapping")
+        sendMessage("Currently Scrapping", 2);
     });
 }
