@@ -8,7 +8,7 @@ const sendMessage = require('./telegram_bot');
 
 const express = require("express")
 const app = express()
-const port = 3000
+const port = 4000
 
 
 // URL
@@ -26,7 +26,7 @@ console.log("Hello world")
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
     getInitData();
-    setInterval(scrape, 1000);
+    setInterval(scrape, 120000);
 })
 
 
