@@ -1,0 +1,24 @@
+require("dotenv").config();
+const { Telegraf } = require('telegraf')
+
+const bot = new Telegraf(process.env.TELEGRAM_BOT_API_KEY)
+
+/* Uncomment this, run locally and send command /start on telegram to get the chat id */
+// bot.start((ctx) =>
+// {
+//     ctx.reply('Yolo');
+//     console.log(ctx)
+//
+//     // to log the chat id, put it in .env file
+//     console.log(ctx.message.chat.id)
+// })
+
+bot.launch()
+
+function sendMessage(message, times) {
+    for (let i = 0; i < times; i++) {
+        bot.telegram.sendMessage(process.env.TELEGRAM_BOT_CHAT_ID, message)
+    }
+}
+
+module.exports = sendMessage;
