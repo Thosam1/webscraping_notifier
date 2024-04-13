@@ -4,8 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "build": "echo"
+    "start": "node api/index.js"
   },
   "keywords": [],
   "author": "",

@@ -1,14 +1,15 @@
+require("dotenv").config();
+
 const axios = require("axios")
 const cheerio = require("cheerio")
 const pretty = require("pretty");
-require("dotenv").config();
 
 const bot = require('./telegram_bot');
 const sendMessage = require('./telegram_bot');
 
 const express = require("express")
 const app = express()
-const port = 4000
+const port = 3000
 
 
 // URL
@@ -94,3 +95,5 @@ function scrape() {
         sendMessage("Currently Scrapping", 1);
     });
 }
+
+module.exports = app;
