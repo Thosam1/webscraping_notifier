@@ -7,13 +7,13 @@ const pretty = require("pretty");
 const bot = require('./telegram_bot');
 const sendMessage = require('./telegram_bot');
 
-const express = require("express")
-const app = express()
-const port = 3000
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+// const express = require("express")
+// const app = express()
+// const port = 3000
+//
+// app.listen(port, () => {
+//     console.log(`Example app listening on port ${port}`)
+// })
 
 
 // URL
@@ -91,9 +91,9 @@ function scrape() {
             sendMessage("Salsa Rueda course has changed !", 2);
         }
 
-        console.log("Currently Scrapping")
-        sendMessage("Currently Scrapping", 1);
+        // console.log("Currently Scrapping")
+        // sendMessage("Currently Scrapping", 1);
     });
 }
 
-module.exports = app;
+// module.exports = app;
