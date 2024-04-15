@@ -5,19 +5,20 @@ const cheerio = require("cheerio")
 
 const sendMessage = require('./telegram_bot');
 
-const express = require("express")
-const app = express()
-const port = 4000
+// const express = require("express")
+// const app = express()
+// const port = 4000
+
 const timeInterval = 10000
 
 // URL
 const url = "https://tanzquotient.org/en/courses/"
 
-app.get("/", (req, res) => res.send("The server can be reached :)"));
+// app.get("/", (req, res) => res.send("The server can be reached :)"));
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-});
+// app.listen(port, () => {
+//     console.log(`Example app listening on port ${port}`)
+// });
 
 console.log("Hello world")
 
@@ -99,4 +100,4 @@ function scrape() {
     });
 }
 
-module.exports = app;
+// module.exports = app;

@@ -16,6 +16,9 @@ let bot = new Telegraf(process.env.TELEGRAM_BOT_API_KEY);
 bot.launch();
 console.log("bot has launched")
 
+process.once('SIGINT', () => bot.stop('SIGINT'));
+process.once('SIGTERM', () => bot.stop('SIGTERM'));
+
 function sendMessage(message, times) {
     for (let i = 0; i < times; i++) {
         bot.telegram.sendMessage(process.env.TELEGRAM_BOT_CHAT_ID, message);
