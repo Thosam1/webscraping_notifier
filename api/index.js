@@ -8,21 +8,27 @@ const sendMessage = require('./telegram_bot');
 const express = require("express")
 const app = express()
 const port = 4000
+const timeInterval = 10000
 
 app.get("/", (req, res) => res.send("The server can be reached :)"));
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
-    getInitData();
-    console.log("After init data")
-    setInterval(scrape, 5000);
-    console.log("after scrape function")
 })
 
 console.log("Hello world")
 
 // URL
 const url = "https://tanzquotient.org/en/courses/"
+
+let runOnce;
+if(!runOnce) {
+    runOnce = true;
+    getInitData();
+    console.log("After init data")
+    setInterval(scrape, timeInterval);
+    console.log("after scrape function")
+}
 
 let bachata4PreviousValue = "";
 let ballroom1PreviousValue = "";
@@ -50,8 +56,8 @@ function getInitData() {
         salsa4PreviousValue = salsa4.text()
         salsaRuedaSwitchPreviousValue = salsaRuedaSwitch.text()
 
-        console.log("The data has been initialized and the interval is set to every " + 120000/1000 + " seconds")
-        sendMessage("The data has been initialized and the interval is set to every " + 120000/1000 + " seconds", 1);
+        console.log("The data has been initialized and the interval is set to every " + timeInterval/1000 + " seconds")
+        sendMessage("The data has been initialized and the interval is set to every " + timeInterval/1000 + " seconds", 1);
     });
 }
 
