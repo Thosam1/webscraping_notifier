@@ -11,10 +11,17 @@ const express = require("express")
 const app = express()
 const port = 4000
 
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
+
 console.log("Hello world")
 
 // URL
 const url = "https://tanzquotient.org/en/courses/"
+
+getInitData();
+setInterval(scrape, 120000);
 
 let bachata4PreviousValue = "";
 let ballroom1PreviousValue = "";
@@ -86,13 +93,5 @@ function scrape() {
         // sendMessage("Currently Scrapping", 1);
     });
 }
-
-getInitData();
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-    getInitData();
-    setInterval(scrape, 120000);
-})
 
 module.exports = app;
