@@ -10,12 +10,32 @@ const app = express()
 const port = 4000
 const timeInterval = 10000
 
+// URL
+const url = "https://tanzquotient.org/en/courses/"
+
 app.get("/", (req, res) => res.send("The server can be reached :)"));
+
+app.get("/start", (req, res) => {
+
+    res.send("The script is running :)")
+
+    getInitData();
+    console.log("After init data")
+    setInterval(scrape, timeInterval);
+    console.log("after scrape function")
+});
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+});
 
 console.log("Hello world")
 
-// URL
-const url = "https://tanzquotient.org/en/courses/"
+/* Uncomment below if running locally */
+// getInitData();
+// console.log("After init data")
+// setInterval(scrape, timeInterval);
+// console.log("after scrape function")
 
 let bachata4PreviousValue = "";
 let ballroom1PreviousValue = "";
@@ -88,14 +108,5 @@ function scrape() {
         sendMessage("Currently Scrapping", 1);
     });
 }
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-
-    getInitData();
-    console.log("After init data")
-    setInterval(scrape, timeInterval);
-    console.log("after scrape function")
-})
 
 module.exports = app;
