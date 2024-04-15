@@ -13,14 +13,7 @@ let bot = new Telegraf(process.env.TELEGRAM_BOT_API_KEY);
 //     console.log(ctx.message.chat.id)
 // })
 
-bot.launch(
-    {
-        webhook: {
-            domain: "https://webscraping-notifier.vercel.app/",
-            port: 8000
-        }
-    }
-);
+bot.launch();
 console.log("bot has launched")
 
 function sendMessage(message, times) {

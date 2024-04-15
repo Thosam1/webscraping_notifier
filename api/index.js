@@ -15,16 +15,6 @@ const url = "https://tanzquotient.org/en/courses/"
 
 app.get("/", (req, res) => res.send("The server can be reached :)"));
 
-// app.get("/start", (req, res) => {
-
-//     res.send("The script is running :)")
-
-//     getInitData();
-//     console.log("After init data")
-//     setInterval(scrape, timeInterval);
-//     console.log("after scrape function")
-// });
-
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
