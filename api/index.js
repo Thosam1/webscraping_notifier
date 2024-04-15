@@ -11,9 +11,7 @@ const express = require("express")
 const app = express()
 const port = 4000
 
-app.get('/home', (req, res) => {
-    res.status(200).json('Welcome, your app is working well');
-})  
+app.get("/", (req, res) => res.send("The server can be reached :)"));
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
@@ -25,7 +23,9 @@ console.log("Hello world")
 const url = "https://tanzquotient.org/en/courses/"
 
 getInitData();
+console.log("After init data")
 setInterval(scrape, 120000);
+console.log("after scrape function")
 
 let bachata4PreviousValue = "";
 let ballroom1PreviousValue = "";
@@ -93,8 +93,8 @@ function scrape() {
             sendMessage("Salsa Rueda course has changed !", 2);
         }
 
-        // console.log("Currently Scrapping")
-        // sendMessage("Currently Scrapping", 1);
+        console.log("Currently Scrapping")
+        sendMessage("Currently Scrapping", 1);
     });
 }
 
