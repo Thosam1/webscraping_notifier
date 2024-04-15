@@ -4,7 +4,6 @@ const axios = require("axios")
 const cheerio = require("cheerio")
 const pretty = require("pretty");
 
-const bot = require('./telegram_bot');
 const sendMessage = require('./telegram_bot');
 
 const express = require("express")
@@ -72,25 +71,26 @@ function scrape() {
         const salsaRuedaSwitch = $("body > div:nth-child(4) > div:nth-child(17) > div:nth-child(2) > div.collapse.show.collapse-100055-2 > table > tbody > tr:nth-child(12) > td:nth-child(4)")
 
         if(bachata4.text() != bachata4PreviousValue) {
-            bachata4PreviousValue = bachata4.text()
             // console.log("Something has changed !!!!")
-            sendMessage("Bachata 4 course has changed !", 2);
+            sendMessage("Bachata 4 course has changed !", 1);
+            bachata4PreviousValue = bachata4.text()
+
         }
         if(ballroom1.text() != ballroom1PreviousValue) {
+            sendMessage("Ballroom 1 course has changed !", 1);
             ballroom1PreviousValue = ballroom1.text()
-            sendMessage("Ballroom 1 course has changed !", 2);
         }
         if(ballroom2.text() != ballroom2PreviousValue) {
+            sendMessage("Ballroom 2 course has changed !", 1);
             ballroom2PreviousValue = ballroom2.text()
-            sendMessage("Ballroom 2 course has changed !", 2);
         }
         if(salsa4.text() != salsa4PreviousValue) {
+            sendMessage("Salsa 4 course has changed !", 1);
             salsa4PreviousValue = salsa4.text()
-            sendMessage("Salsa 4 course has changed !", 2);
         }
         if(salsaRuedaSwitch.text() != salsaRuedaSwitchPreviousValue) {
+            sendMessage("Salsa Rueda course has changed !", 1);
             salsaRuedaSwitchPreviousValue = salsaRuedaSwitch.text()
-            sendMessage("Salsa Rueda course has changed !", 2);
         }
 
         console.log("Currently Scrapping")
