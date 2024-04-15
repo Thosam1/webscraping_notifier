@@ -10,7 +10,7 @@ This Node.js script will periodically check a given website and send you a teleg
 # Project Overview
 
 The main objectives of this project include:
-- Creating a Telegram bot
+- Creating a Telegram bot (https://www.youtube.com/watch?v=vZtm1wuA2yc)
 - Monitoring specific elements of a website at regular intervals, checking for changes.
 - Sending notifications to the user via the Telegram bot when changes are detected.
 
