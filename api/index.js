@@ -24,7 +24,7 @@ const url = "https://tanzquotient.org/en/courses/"
 
 getInitData();
 console.log("After init data")
-setInterval(scrape, 120000);
+setInterval(scrape, 5000);
 console.log("after scrape function")
 
 let bachata4PreviousValue = "";
