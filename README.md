@@ -1,6 +1,6 @@
 <div align="center">
   
-# Webscraping with Telegram notifications via bot
+# Webscraping With Telegram Notifications
 
 This Node.js script will periodically check a given website and send you a telegram notification whenever a change happens !
 
@@ -29,17 +29,23 @@ To run this project locally, follow these steps:
 
 Feel free to explore the codebase, make modifications, and customize the code to fit your needs!
 
-# Modifying
+# Modifications
 
 To change the website, you just have to change the `url` variable in index.js
 
 To change the element you watch, you can go to the dev console, and select the element, then click on copy, copy selector.
 
-<img src="./public/copy_selector.png" alt="Thösam's logo" width="350" height="150">
+<br/>
+<div align="center">
+
+<img src="./public/copy_selector.png" alt="" width="750" height="550">
+
+</div>
+<br/>
 
 Then you can paste the content inbetween the quotes like this 
 
-```
+```js
 let elementWatched = $("PASTED_VALUE")
 ```
 
