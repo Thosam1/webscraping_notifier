@@ -23,7 +23,7 @@ To run this project locally, follow these steps:
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
 3. Install dependencies using `npm install`.
-4. 1. Create a Telegram bot and get the api key from BotFather 
+4. Create a Telegram bot and get the api key from BotFather 
 5. Put the api key for the bot in an .env file that you create and put it at the root of the repository (to help, follow the instruction in <a href="https://github.com/Thosam1/webscraping_notifier/blob/main/.dummy.env" target="_blank">.dummy.env</a> ;D)
 6. Start the  script with `npm start`.
 
