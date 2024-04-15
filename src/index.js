@@ -5,24 +5,11 @@ const cheerio = require("cheerio")
 
 const sendMessage = require('./telegram_bot');
 
-// const express = require("express")
-// const app = express()
-// const port = 4000
-
 const timeInterval = 10000
 
 // URL
 const url = "https://tanzquotient.org/en/courses/"
 
-// app.get("/", (req, res) => res.send("The server can be reached :)"));
-
-// app.listen(port, () => {
-//     console.log(`Example app listening on port ${port}`)
-// });
-
-console.log("Hello world")
-
-/* Uncomment below if running locally */
 getInitData();
 console.log("After init data")
 setInterval(scrape, timeInterval);
@@ -40,6 +27,7 @@ function getInitData() {
         // Load the HTML into cheerio
         const $ = cheerio.load(response.data);
 
+        
         // copy -> copy selector on chrome dev tools
         const bachata4 = $("body > div:nth-child(4) > div:nth-child(17) > div:nth-child(1) > div.collapse.show.collapse-100055-1 > table > tbody > tr:nth-child(1) > td:nth-child(4)");
         const ballroom1 = $("body > div:nth-child(4) > div:nth-child(17) > div:nth-child(1) > div.collapse.show.collapse-100055-1 > table > tbody > tr:nth-child(3) > td:nth-child(4)");
@@ -64,6 +52,12 @@ function scrape() {
     axios.get(url).then((response) => {
         // Load the HTML into cheerio
         const $ = cheerio.load(response.data);
+
+        const digit = $("#digit2")
+        if(digit != prev) {
+            prev = digit
+            sendMessage("Digit has changed !", 1);
+        }
 
         // copy -> copy selector on chrome dev tools
         const bachata4 = $("body > div:nth-child(4) > div:nth-child(17) > div:nth-child(1) > div.collapse.show.collapse-100055-1 > table > tbody > tr:nth-child(1) > td:nth-child(4)");
@@ -99,5 +93,3 @@ function scrape() {
         sendMessage("Currently Scrapping", 1);
     });
 }
-
-// module.exports = app;
