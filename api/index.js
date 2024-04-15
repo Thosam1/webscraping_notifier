@@ -21,14 +21,10 @@ console.log("Hello world")
 // URL
 const url = "https://tanzquotient.org/en/courses/"
 
-let runOnce;
-if(!runOnce) {
-    runOnce = true;
-    getInitData();
-    console.log("After init data")
-    setInterval(scrape, timeInterval);
-    console.log("after scrape function")
-}
+getInitData();
+console.log("After init data")
+setInterval(scrape, timeInterval);
+console.log("after scrape function")
 
 let bachata4PreviousValue = "";
 let ballroom1PreviousValue = "";
