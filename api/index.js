@@ -12,19 +12,10 @@ const timeInterval = 10000
 
 app.get("/", (req, res) => res.send("The server can be reached :)"));
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
-
 console.log("Hello world")
 
 // URL
 const url = "https://tanzquotient.org/en/courses/"
-
-getInitData();
-console.log("After init data")
-setInterval(scrape, timeInterval);
-console.log("after scrape function")
 
 let bachata4PreviousValue = "";
 let ballroom1PreviousValue = "";
@@ -97,5 +88,14 @@ function scrape() {
         sendMessage("Currently Scrapping", 1);
     });
 }
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+
+    getInitData();
+    console.log("After init data")
+    setInterval(scrape, timeInterval);
+    console.log("after scrape function")
+})
 
 module.exports = app;
